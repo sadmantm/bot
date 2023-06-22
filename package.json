@@ -36,12 +36,11 @@
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "moments": "^0.0.1",
     "pino": "^7.11.0",
     "puppeteer-core": "^20.5.0",
     "qrcode-terminal": "^0.12.0",
     "util": "^0.12.4",
-    "whatsapp-web.js": "^1.21.0",
+    "whatsapp-web.js": "^1.21.0"
   },
   "directories": {
     "lib": "lib",

@@ -40,7 +40,7 @@ async function aguardarRespostaPedido(client, message, estadoUsuarios) {
   const { from } = message;
   let estadoUsuario = estadoUsuarios[from];
   if (message.body.toLowerCase().includes('cancela')) {
-    await client.sendText(from, 'Ok, vamos cancelar o pedido...');
+    await client.sendText(from, 'Ok, pedido cancelado.');
     delete estadoUsuarios[from];
     return;
   }
@@ -60,19 +60,20 @@ async function aguardarRespostaPedido(client, message, estadoUsuarios) {
     estadoUsuarios[from] = estadoUsuario;
 
     if (hora > "0700" && hora < "1200") {
-      await client.sendText(from, 'Bom dia!, e bem-vindo(a) ao atendimento virtual da Lopes Burguer. 🍔 Agradecemos desde já o seu interesse e contato!');
+      await client.sendText(from, `Bom dia!, meu nome é Lopinho e sou a assistente virtual da Lopes Burguer, estou aqui para te ajudar a fazer seu pedido. Vamos lá? 😊🍔`);
     }
     if (hora > "1200" && hora < "1800") {
-      await client.sendText(from, 'Boa tarde!, e bem-vindo(a) ao atendimento virtual da Lopes Burguer. 🍔 Agradecemos desde já o seu interesse e contato!');
+      await client.sendText(from, `Boa tarde!, meu nome é Lopinho e sou a assistente virtual da Lopes Burguer, estou aqui para te ajudar a fazer seu pedido. Vamos lá? 😊🍔`);
     }
     if (hora > "1800" && hora < "2359") {
-      await client.sendText(from, 'Boa noite!, e bem-vindo(a) ao atendimento virtual da Lopes Burguer. 🍔 Agradecemos desde já o seu interesse e contato!');
+      await client.sendText(from, `Boa noite!, meu nome é Lopinho e sou a assistente virtual da Lopes Burguer, estou aqui para te ajudar a fazer seu pedido. Vamos lá? 😊🍔`);
     }
     if (hora > "0000" && hora < "0700") {
-      await client.sendText(from, 'Boa madrugada!, e bem-vindo(a) ao atendimento virtual da Lopes Burguer. 🍔 Agradecemos desde já o seu interesse e contato!');
+      await client.sendText(from, `Boa madrugada!, meu nome é Lopinho e sou a assistente virtual da Lopes Burguer, estou aqui para te ajudar a fazer seu pedido. Vamos lá? 😊🍔`);
     }
     setTimeout(async () => {
-      await client.sendText(from, 'Primeiramente, você gostaria de fazer algum pedido? se sim, dejesa que seja diretamente pelo nosso site ou prefere fazer por aqui mesmo?');
+      await client.sendText(from, `Antes de continuarmos, vamos agilizar seu pedido: você prefere comprar pelo site ou gostaria de conversar com nossa inteligência artificial aqui no chat?
+lembre-se de seguir, aguardar e ler as mensagens do robô para não ter nenhum erro.`);
     }, 500);
   } else {
     const { passo } = estadoUsuario;

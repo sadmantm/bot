@@ -29,7 +29,7 @@ async function start() {
   // Printa o log de mensagens e erros no console
   client.onAnyMessage((message) => {
     if (!message.fromMe && !message.isGroupMsg) {
-    console.log("mensagem:", message.body, "de:", message.sender.pushname);
+    console.log("mensagem:", message.body, "de:", message.sender.pushname, "as:", burger.hora);
     }
   });
 }
